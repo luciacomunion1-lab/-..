@@ -1,0 +1,117 @@
+/* ======== ESTILOS GENERALES ======== */
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #0b0b1a;
+  color: #ffffff;
+}
+
+header {
+  background: #0046a8;
+  padding: 14px 18px;
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 3px solid #002c6b;
+}
+
+main {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ======== TARJETAS DE NOTICIAS ======== */
+.news-item {
+  background: #11162a;
+  padding: 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00000055;
+  transition: 0.2s;
+}
+
+.news-item:hover {
+  background: #18213d;
+  transform: scale(1.01);
+}
+
+/* ======== TITULO Y RESUMEN ======== */
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.summary {
+  font-size: 15px;
+  color: #cfd4ff;
+  margin-bottom: 12px;
+}
+
+/* ======== IMÁGENES ======== */
+.news-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #00000033;
+}
+
+/* ======== ENLACE ======== */
+.news-item a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+/* ======== DETALLE ======== */
+.detail {
+  background: #11162a;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: none;
+}
+
+.detail h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.detail p {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.detail a {
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.detail a:hover {
+  text-decoration: underline;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 600px) {
+  header {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .summary {
+    font-size: 14px;
+  }
+}

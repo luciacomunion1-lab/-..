@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Noticias Barça Baloncesto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Enlazar estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header>Noticias Barça Baloncesto</header>
+
+<main id="newsList"></main>
+
+<script>
+  const NEWS_URL = "https://tu-dominio.com/noticias.json";
+
+  async function loadNews() {
+    try {
+      const res = await fetch(NEWS_URL + "?v=" + Date.now());
+      const data = await res.json();
+      render(data);
+    } catch (e) {
+      document.getElementById("newsList").innerHTML =
+        "<div>Error al cargar noticias.</div>";
+    }
+  }
+
+  function render(list) {
+    const box = document.getElementById("newsList");
+    box.innerHTML = "";
+
+    if (!list.length) {
+      box.innerHTML = "<div>No hay noticias del Barça.</div>";
+      return;
+    }
+
+    list.forEach(item => {
+      box.innerHTML += `
+        <div class="news-item">
+          <div class="title">${item.title}</div>
+          <div class="summary">${item.summary}</div>
+          <img src="${item.image}" alt="Foto noticia">
+          <a href="${item.url}" target="_blank">Abrir noticia completa</a>
+        </div>
+      `;
+    });
+  }
+
+  loadNews();
+</script>
+
+</body>
+</html>
